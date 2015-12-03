@@ -24,7 +24,7 @@ module.exports = {
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
-				loader: 'jshint-loader'
+				loader: 'eslint-loader'
 			}
 		],
 		loaders: [
@@ -49,5 +49,10 @@ module.exports = {
 		contentBase: path.join(__dirname, '/src'),
 		noInfo: false,
 		hot: true
+	},
+	
+	// ESLint config
+	eslint: {
+		configFile: path.join(__dirname, '.eslintrc')	
 	}
 };
