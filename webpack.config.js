@@ -40,7 +40,15 @@ module.exports = {
 				test: /\.tpl\.html$/,
 				exclude: /node_modules/,
 				loader: 'ngtemplate!html'
-			}
+			},
+      {
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
+      },
+      {
+        test: /\.css$/,
+        loaders: ["style", "css"]
+      }
 		]
 	},
 	
