@@ -3,12 +3,15 @@ var path = require('path');
 module.exports = {
 	// Specify logical root of the sourcecode
 	context: path.join(__dirname, '/src'),
-	entry: 'index.js',
+	entry: {
+    app: ['index.js'],
+    lessCool: ['second.js']
+  },
 	
 	// Specify where to put the results
 	output: {
 		path: path.join(__dirname, '/dist'),
-		filename: 'bundle.js'
+		filename: '[name].js'
 	},
 	
 	// Specify logical root of package imports so as to avoid relative path everywhere
@@ -39,7 +42,7 @@ module.exports = {
 			{
 				test: /\.tpl\.html$/,
 				exclude: /node_modules/,
-				loader: 'ngtemplate!html'
+				loader: 'ngtemplate?relativeTo=/src/!html'
 			},
       {
         test: /\.scss$/,
