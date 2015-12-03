@@ -4,6 +4,8 @@ md-sidenav {
   background-color: $red;
 }
 
-.user-avatar {
-  border-radius: 99%;
+user-avatar {
+  svg {
+    border-radius: 99%;
+  }
 }
